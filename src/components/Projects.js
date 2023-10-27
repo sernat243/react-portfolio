@@ -8,7 +8,13 @@ const Projects = () => {
 
         fetch(reposUrl)
             .then((response) => response.json())
-            .then((data) => setRepos(data))
+            .then((data) => {
+                // Sort the repositories by creation date in descending order
+                const sortedRepos = data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+                // Get the last 6 repositories
+                const latestRepos = sortedRepos.slice(0, 6);
+                setRepos(latestRepos);
+            })
             .catch((error) => console.error("Error fetching GitHub data: ", error));
     }, []);
 
@@ -19,7 +25,9 @@ const Projects = () => {
                 {repos.map((repo) => (
                     <li key={repo.id}>
                         <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                            {repo.name}
+                            <div className="repo-card" style={{ backgroundImage: `url(${repo.backgroundImage})` }}>
+                                {repo.name}
+                            </div>
                         </a>
                     </li>
                 ))}
