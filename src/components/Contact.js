@@ -1,29 +1,70 @@
+import { useState } from "react";
+
 const Contact = () => {
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formData);
+
+        setFormData({
+            name: '',
+            email: '',
+            message: '',
+        });
+    };
+
     return (
       <section id="contact">
         <h2>Contact Me</h2>
-        <p>
-          If you'd like to get in touch with me, please feel free to send me an
-          email at <a href="mailto:gs.devprog@gmail.com">gs.devprog@gmail.com</a>.
-        </p>
-        <p>You can also connect with me on social media:</p>
-        <ul>
-          <li>
-            <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-              LinkedIn {/* will update later */}
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
-              Twitter {/* will update later */}
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/sernat243" target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-          </li>
-        </ul>
+        <form onSubmit={handleSubmit}>
+            <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+            />
+            </div>
+            <div className="form-group">
+            <label htmlFor="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+            />
+            </div>
+            <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                required
+            />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
       </section>
     );
   };
