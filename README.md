@@ -6,6 +6,7 @@
 
 - [Introduction](#introduction)
 - [Demo](#demo)
+- [Screenshot](#screenshot)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -19,6 +20,12 @@ Welcome to my Freelancer Portfolio! This repository showcases my work as a freel
 ## Demo
 
 You can access a live demo of my portfolio [here](https://bespoke-kangaroo-d84bc1.netlify.app/).
+
+## Screenshot
+
+Here is a screenshot of my portfolio:
+
+![Portfolio Screenshot](./public/screenshot.png)
 
 ## Features
 
