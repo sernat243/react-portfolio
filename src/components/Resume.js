@@ -1,6 +1,6 @@
 const Resume = () => {
     return (
-      <section>
+      <section id="resume">
         <h2>Resume</h2>
         <h3>Education</h3>
         <p>
@@ -8,7 +8,7 @@ const Resume = () => {
         </p>
         <h3>Bootcamp Graduation</h3>
         <p>
-          - EdX Coding Bootcamp, Graduation: November 23
+          - EdX Coding Bootcamp, Graduation: November 2023
         </p>
         <h3>Work Experience</h3>
         <p>
