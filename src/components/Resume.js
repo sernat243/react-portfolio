@@ -2,6 +2,9 @@ const Resume = () => {
     return (
       <section id="resume">
         <h2>Resume</h2>
+        <a href="/resume.pdf" download="ResumeGabrielSerna.pdf">
+            Download PDF
+        </a>
         <h3>Education</h3>
         <p>
           - Bachelor of Business Administration in Marketing, University of Texas at San Antonio (UTSA), 2017
