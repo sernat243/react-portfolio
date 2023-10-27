@@ -2,6 +2,7 @@ const AboutMe = () => {
     return (
       <section id="about">
         <h2>About Me</h2>
+        <img src="/profile.png" alt="Avatar"></img>
         <p>
           I am a passionate freelance developer with a strong interest in web
           development. I love creating responsive and user-friendly web
