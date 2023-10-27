@@ -1,5 +1,6 @@
 import Header from "./Header";
 import Routes from "../Routes";
+import Footer from "./Footer";
 
 const Layout = () => {
   return (
@@ -8,7 +9,7 @@ const Layout = () => {
       <div className="content">
         <Routes />
       </div>
-      <footer>Footer content goes here</footer>
+      <Footer />
     </div>
   );
 };
