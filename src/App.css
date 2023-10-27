@@ -2,6 +2,33 @@
   text-align: center;
 }
 
+.custom-button {
+  background-color: #b63a15;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.custom-button:hover {
+  background-color: #8a2d11;
+}
+
+/* custom.css */
+.card.repo-card {
+  min-height: 300px;
+  transition: background-color 0.3s; /* Add a smooth transition effect */
+
+  /* Hover effect */
+  &:hover {
+    background-color: #38739b; /* Change the background color on hover */
+  }
+}
+
+.selected-link {
+  color: #007BFF; /* Set the color you want for the selected link */
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

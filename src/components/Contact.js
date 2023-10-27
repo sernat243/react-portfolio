@@ -39,47 +39,56 @@ const Contact = () => {
     
 
     return (
-      <section id="contact">
-        <h2>Contact Me</h2>
-        <form onSubmit={handleSubmit}>
-            <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                />
+        <section id="contact" className="py-5">
+            <div className="container">
+            <h2 className="mb-4">Contact Me</h2>
+                <div className="row">
+                <div className="col-md-6">
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                    <label htmlFor="name" className="form-label">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        className="form-control"
+                        required
+                    />
+                    </div>
+                    <div className="mb-3">
+                    <label htmlFor="email" className="form-label">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className="form-control"
+                        required
+                    />
+                    </div>
+                    <div className="mb-3">
+                    <label htmlFor="message" className="form-label">Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        onBlur={handleBlur}
+                        className="form-control"
+                        required
+                    />
+                    {messageError && <p className="error-message">{messageError}</p>}
+                    </div>
+                    <button type="submit" className="btn custom-button">Submit</button>
+                </form>
+                </div>
             </div>
-            <div className="form-group">
-                <label htmlFor="email">Email Address</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                />
-            </div>
-            <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    onBlur={handleBlur}
-                    required
-                />
-                {messageError && <p className="error-message">{messageError}</p>}
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-      </section>
+        </div>
+    </section>
     );
-  };
+};
   
   export default Contact;
